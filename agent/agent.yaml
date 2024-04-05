@@ -1,0 +1,6 @@
+serialNumber: "3927-2849-2930-1289"
+thresholds:
+  humidity:
+    low: 0.7
+    high: 1
+    duration: 120
