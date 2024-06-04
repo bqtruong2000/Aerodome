@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "aerodome-agent",
+  "private_key_id": "674f87adac343b78d68019984805ec1ff49b763f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCl7XF/HvT+YZLi\nK+Kh9YtyUNWK8sC4p1bt34GA5+2ue7HUJSrCcdRdR0emcdZMIXxKywuZgxzc4j5p\nL3OQHwRaK/1R7O6L3NEtPRSmEznymay90aiI2suUnyGVwQvjYsP/BU0GqVvgHPl3\nLbKEM9sfsliQKbA3CARwQXigGJxBazf61qQ2bm412kdGVP/WOs8oQNXxXxn54w4s\n183EgIatMtdLkWOk6hu2z1V2p6jpLtbVtqwNSFZagCf9Xt9cVF0DIpLWJq85lLhV\nroZAFvmVFNn7LCGbeN2f0Vb8Po/aWIq0A5i8AQaUY4AGv9V9UtT3DVgEH/Wc+9aW\nqYwQufgPAgMBAAECggEAK7Tq85BE+ojbNwZWUVErpTYTueEN0NYLeOcp5rmxCwf8\nJKSRqdxwEw4Gmppb13vukIkBijNWM/zIcc6VAz6YV+REewMNJvxIgUEYolJoLjY6\noVmLqljvzTtJjnfmWMQYWqGb04hi8hrPv4vi/R3nt2a0G21PxH8xJByq2IkDB9v4\nrqa3Le0P86GYeTEYQOdVhB9Jgd4ePfsFE2rKcuZWVgE73eAJez6aBef4FI8Vjdwa\nwujn371aYqgdpdhS2vdPc4VkH+pkVYD4JnFAwmSBKi02SlaYL4uKg4b0M4tAmArG\nEpkwRlHEKQc52j7Fl9KV76WuTlsNNbgwf61wo8SfuQKBgQDSFbTGSUFZSZlLCP1p\nTIoKxjHMydhk+FGuUkjIHtKZYT8aT18IP15MjgDhxGypZ+3Y9WuCKHGr+6wml844\nEh1YnWLrobqc+aQI+ggyGG3IlVp5KVBsKk3kawtFF+Up27j9xtNFvEuaXtFkkgiA\ndjeYBHIXkoKUdQ77etgbP8QVowKBgQDKMSCI5mU+FDnOa39l/IVLwP/e6v+FRNC5\njOJdhBgOt5NRwIoY6YqapBVZ/TDO/636hkTsdgANcg3wfeaI9aAi+mpvDly75lJT\nsPypm3Hp+Ie6lrwwQdJWVXNmZbqh/XI+tfIDUBz0WKL0iV0+8+ocoYZjMEVnMeZE\ntfh/I2xCpQKBgQDEbC0QM8/Yxpp/8JDW0gxDFJndSl970Dy2ixKnoUHwzF6un8VP\ntcfaNe8XJ4sdPSHB93ykPmJBldaYYtkZzb4Ia2bgvt73A+XdysC87eA/aX0kyX77\nEvau+XKZEEVgRKKLDEne6rWZSMvohy1RxrYl+Qofhgl2+peeg3XozE7ulwKBgQC6\nmLAP56DTs9LNX4PJWUyi5tC8p199XE7Mjupxp3CUVHLO5cQMzasun/Ncgz/CKVAk\nfjmpiBTwU6vtoCNbjmNlJHmJWFXYyux7dEEZPe3ZIZYRav7uAjDdoCrJ+2RMDxya\nJ0vcJtkx34Mz7nlxmaUbGy5s56WFYRXDn7RfkQ9eSQKBgQCOugENjTKHyEukBgsB\nvFoQ7bJxrQxbiFMgnucVW+fjQFMqHIluvqa76MRHP1CYKwrMUUxHznCHRh65I39U\nGsKB7N1qSGPmM5x4wSiZXjAPy7IMaaL/ANMqEKk1wT5dD7CXBKQDydELgaFCuGfF\niFCkuakvwr+uvG38jA9ADffCLw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-sny5o@aerodome-agent.iam.gserviceaccount.com",
+  "client_id": "109954149764586135644",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-sny5o%40aerodome-agent.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
