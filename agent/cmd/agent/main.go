@@ -1,11 +1,14 @@
 package main
 
 import (
+	"cloud.google.com/go/firestore"
 	"context"
+	firebase "firebase.google.com/go"
 	"fmt"
 	"github.com/eclipse/paho.golang/autopaho"
 	paho "github.com/eclipse/paho.golang/paho"
 	"github.com/spf13/viper"
+	"google.golang.org/api/option"
 	"log"
 	"net/url"
 	"runwayclub.dev/aerodome/agent/domain"
@@ -95,6 +98,27 @@ func main() {
 		},
 	}
 
+	// setup firebase config
+	opt := option.WithCredentialsFile("config/aerodome-agent-key.json")
+	// setup firebase app
+	_, err = firebase.NewApp(context.Background(), nil, opt)
+	if err != nil {
+		fmt.Printf("error initializing app: %v\n", err)
+		panic(err)
+	} else {
+		fmt.Printf("app initialized\n")
+	}
+
+	const projectID = "aerodome-agent"
+	// setup firestore client & projectID
+	client, err := firestore.NewClient(context.Background(), projectID, opt)
+	if err != nil {
+		fmt.Printf("error initializing firestore client: %v\n", err)
+	} else {
+		fmt.Printf("firestore client initialized\n")
+
+	}
+
 	ctx := context.Background()
 
 	c, err := autopaho.NewConnection(ctx, cliCfg) // starts process; will reconnect until context cancelled
@@ -111,6 +135,10 @@ func main() {
 	// create ticker
 	timer := time.NewTicker(5 * time.Second)
 	deltaT := time.Now().UnixMilli()
+
+	// create ticker for 5 minutes
+	publishTicker := time.NewTicker(3 * time.Minute)
+	defer publishTicker.Stop()
 
 	onWateringMode := false
 	wateringRetainTime := int64(0)
@@ -167,6 +195,19 @@ func main() {
 				}
 			}
 			deltaT = time.Now().UnixMilli()
+		case <-publishTicker.C:
+			_, _, err = client.Collection("sensor_data").Add(ctx, map[string]interface{}{
+				"temperature": currentData.Temperature,
+				"humidity":    currentData.Humidity,
+				"watering":    wateringEnabled,
+				"fan":         fanEnabled,
+				"timestamp":   time.Now().Format(time.RFC3339),
+			})
+			if err != nil {
+				fmt.Printf("error adding document: %v\n", err)
+			} else {
+				fmt.Printf("document added\n")
+			}
 		case <-ctx.Done():
 		}
 	}
