@@ -167,6 +167,10 @@ func main() {
 					onWateringMode = false
 				}
 			}
+			if currentData.Humidity < viper.GetFloat64("thresholds.humidity.invalid")*100 {
+				onWateringMode = false
+
+			}
 			// publish data
 			fanData := "00"
 			if fanEnabled {
@@ -196,12 +200,14 @@ func main() {
 			}
 			deltaT = time.Now().UnixMilli()
 		case <-publishTicker.C:
-			_, _, err = client.Collection("sensor_data").Add(ctx, map[string]interface{}{
+			collectionName := time.Now().Format(time.DateOnly)
+			_, _, err = client.Collection(collectionName).Add(ctx, map[string]interface{}{
 				"temperature": currentData.Temperature,
 				"humidity":    currentData.Humidity,
 				"watering":    wateringEnabled,
 				"fan":         fanEnabled,
-				"timestamp":   time.Now().Format(time.RFC3339),
+				// timestamp is Vietnam timezone
+				"timestamp": time.Now().UTC().Add(7 * time.Hour).Format(time.TimeOnly),
 			})
 			if err != nil {
 				fmt.Printf("error adding document: %v\n", err)

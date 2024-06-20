@@ -1,6 +1,7 @@
 serialNumber: "3927-2849-2930-1289"
 thresholds:
   humidity:
-    low: 0.7
-    high: 1
+    low: 0.6
+    high: 0.9
     duration: 120
+    invalid: 0.0

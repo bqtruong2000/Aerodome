@@ -11,6 +11,7 @@ RUN go build -o agent ./cmd/agent/main.go
 FROM alpine:latest
 COPY --from=builder /build/agent ./agent
 COPY --from=builder /build/agent.yaml ./agent.yaml
+COPY --from=builder /build/config/ ./config/
 
 # install ca-certificates
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
